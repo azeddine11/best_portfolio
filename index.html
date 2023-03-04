@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+    <script defer src="main.js"></script>
     <title>Azeddine</title>
 
     <style>
@@ -32,8 +33,11 @@
           <div class="flex items-center justify-between gap-4 lg:gap-10">
             <div class="flex lg:w-0 lg:flex-1">
               <a href="#">
-                <span class="sr-only">Logo</span>
-                <span class="inline-block h-10 w-32 rounded-lg bg-gray-200"></span>
+                <!-- <span class="sr-only">Logo</span>
+                <span class="inline-block h-10 w-32 rounded-lg bg-gray-200"> 
+                </span>
+                <img class="h-18" src="images/wf.png" alt=""> -->
+                <h1 class="text-white italic text-3xl font-black font-mono ">AZEDDINE</h1>
               </a>
             </div>
       
@@ -53,35 +57,51 @@
       
               <a
                 class="rounded-lg bg-red-600 px-14 py-2 text-sm font-medium text-white hover:bg-white hover:text-black transition duration-700 ease-in-out ..."
-                href=""
                 href="#contact">
               Contact
               </a>
             </div>
       
-            <div class="lg:hidden">
-              <button class="rounded-lg bg-gray-100 p-2 text-gray-600" type="button">
-                <span class="sr-only">Open menu</span>
-                <svg
-                  aria-hidden="true"
-                  class="h-5 w-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewbox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4 6h16M4 12h16M4 18h16"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                  />
-                </svg>
-              </button>
-            </div>
+           <!-- Mobile menu button -->
+<div class="md:hidden flex items-center">
+	<button class="outline-none mobile-menu-button">
+		<svg
+			class="w-6 h-6 text-gray-500"
+			x-show="!showMenu"
+			fill="none"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			stroke-width="2"
+			viewBox="0 0 24 24"
+			stroke="currentColor"
+		>
+		<path d="M4 6h16M4 12h16M4 18h16"></path>
+		</svg>
+	</button>
+</div>
+
+<div class="hidden mobile-menu">
+	<ul class="">
+		<li><a href="#home" class="block text-sm px-2 py-2 text-white font-semibold active:text-red-600">Home</a></li>
+    <li><a href="#about" class="block text-sm px-2 py-2 text-white transition duration-300 active:text-red-600">About</a></li>
+		<li><a href="#services" class="block text-sm px-2 py-2 text-white transition duration-300 active:text-red-600">Services</a></li>
+    <li><a href="#projects" class="block text-sm px-2 py-2 text-white transition duration-300 active:text-red-600">Projects</a></li>
+	</ul>
+</div>
           </div>
         </div>
       </header>
+
+      <script>
+        // Grab HTML Elements
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
+      
+        // Add Event Listeners
+        btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        });
+      </script>
       
 
     <!-- HEADER END -->
@@ -89,15 +109,15 @@
 
     <!-- MAIN START -->
 
-    <section id="home">
+    <section id="home" class="hiddenn pb-10">
   <div
-    class="relative mx-auto max-w-screen-xl px-4 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8 justify-around"
+    id="homey" class="relative mx-0 pt-12 w-full px-4 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8 justify-around"
    >
     <div class="max-w-xl text-center sm:text-left">
       <h1 class="text-5xl font-bold sm:text-7xl text-white">
         Hi, <br> I'm AZEDDINE,
 
-        <p class="block font-medium sm:text-5xl py-4 text-white">
+        <p class="block font-medium sm:text-5xl py-4 text-white hover:bg-red-500 hover:shadow-lg hover:shadow-red-500/50 transition duration-300...">
           web developer
         </p>
       </h1>
@@ -108,32 +128,32 @@
 
       <div class="mt-8 flex flex-wrap gap-4 text-center">
         <a
-          href="#"
+          href="#projects"
           class="block w-full rounded bg-red-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-white hover:text-red-600 transition duration-700 ease-in-out ...focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
         >
           See Projects
         </a>
 
         <a
-          href="#"
+          href="#services"
           class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-red-600 shadow hover:text-black hover:bg-red-600 hover:text-white transition duration-700 ease-in-out ... focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
         >
-          Be in touch
+          What I'm offering
         </a>
       </div>
 
       <!-- hh -->
 
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-linkedin"></i><span class="text-red-600">Linkedin</span></a>
-        <a  href="whatsapp"><i class="fab fa-whatsapp"></i><span class="text-red-600">WhatsApp</span> </a>
-        <a href="mailto:azeddineaittaakat1r@gmail.com"><i class="fa-solid fa-envelope"></i><span class="text-red-600">Gmail</span> </a>
-    </div>
+      <div class="social-icons flex flex-nowrap">
+        <a href="https://github.com/azeddine11?tab=repositories" target="_blank"><i class="fab fa-github"></i><span class="text-red-600">Github</span></a>
+        <a href="https://wa.me/212677730968" target="_blank"><i class="fab fa-whatsapp"></i><span class="text-red-600">WhatsApp</span> </a>
+        <a href="https://LinkedIn.com/" target="_blank"><i class="fa-brands fa-linkedin"></i><span class="text-red-600">LinkedIn</span> </a>
+       </div>
 
     </div>
 
     <div>
-      <img style="height: 550px; width: 440px;object-fit: cover; " src="images/pics.png" alt="">
+      <img style="height: 520px; width: 430px;object-fit: cover; margin-top : 30px " src="images/pics.png" alt="">
     </div>
 
   </div>
@@ -147,12 +167,12 @@
 
     <!-- ABOUT START -->
 
-    <section id="about">
+    <section id="about" class="hiddenn">
     <div class="text-center">
     <P class="text-red-600 text-xl font-medium pt-2">my intro</P>
     <h1 class="text-white text-3xl font-bold pt-5">QUICK WORDS ABOUT ME</h1>
-</div>
-    <section>
+    </div>
+    <section class="hiddenn">
       <div class="mx-auto max-w-screen-2xl px-14 sm:px-14 lg:px-14">
         <div class="grid grid-cols-1 lg:h-screen lg:grid-cols-2 sm:grid grid-cols-1">
           <div class="relative z-10 lg:py-16">
@@ -176,8 +196,8 @@
                 quibusdam fugiat dicta.
               </p>
               <a
-                href="#"
-                class="mt-8 inline-block rounded border border-red-600 bg-red-600 px-12 py-3 text-sm font-medium text-white hover:text-black hover:bg-white hover:text-red-600 transition duration-700 ease-in-out ..."
+                href="#contact"
+                class="mt-8 inline-block rounded border border-none bg-red-600 px-12 py-3 text-sm font-medium text-white hover:text-black hover:bg-white hover:text-red-600 transition duration-700 ease-in-out ..."
               >
                 Get in Touch
               </a>
@@ -193,7 +213,7 @@
 
     <!-- SKILLS START -->
 
-    <section id="skills">
+    <section id="skills" class="hiddenn">
     <div class="text-center">
       <P class="text-red-600 text-xl font-medium pt-2">my skills</P>
       <h1 class="text-white text-3xl font-bold pt-5">TECHNOLOGIES ..</h1>
@@ -204,12 +224,14 @@
   <div>
    <!-- lg:mx-60 -->
     <div class="mt-3  flex -space-x-2 overflow-hidden justify-center p-8 flex-wrap">
-      <img class="inline-block h-32 w-32 rounded-full ring-2 ring-white" src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png"/>
-      <img class="inline-block h-32 w-32 rounded-full ring-2 ring-white" src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png"/>
-      <img class="inline-block h-32 w-32 rounded-full ring-2 ring-white" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Javascript_Logo.png"/>
-      <img class="inline-block h-32 w-32 rounded-full ring-2 ring-white" src="https://cdn.worldvectorlogo.com/logos/react-1.svg"/>
-      <img class="inline-block h-32 w-32 rounded-full ring-2 ring-white" src="https://e7.pngegg.com/pngimages/666/502/png-clipart-brand-php-logo-computer-file-product-breeze-blue-text.png"/>
-      <img class="inline-block h-32 w-32 rounded-full ring-2 ring-white" src="https://www.freepnglogos.com/uploads/logo-mysql-png/logo-mysql-mysql-logo-png-images-are-download-crazypng-21.png"/>
+      <img class="inline-block h-32 w-32 rounded-full ring-2 ring-white cursor-grab hover:animate-bounce"  src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png"/>
+      <img class="inline-block h-32 w-32 rounded-full ring-2 ring-white cursor-grab hover:animate-bounce"  src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png"/>
+      <img class="inline-block h-32 w-32 rounded-full ring-2 ring-white cursor-grab hover:animate-bounce"  src="https://yt3.googleusercontent.com/ikv41jMTr1uHGdILrJhvbfVJcDt4oqhwApKX37TjAleF_cRPbF2W-waj7uMnS5JySvnlvAlTCg=s900-c-k-c0x00ffffff-no-rj"/>
+      <img class="inline-block h-32 w-32 rounded-full ring-2 ring-white cursor-grab hover:animate-bounce"  src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Javascript_Logo.png"/>
+      <img class="inline-block h-32 w-32 rounded-full ring-2 ring-white cursor-grab hover:animate-bounce"  src="https://cdn.worldvectorlogo.com/logos/react-1.svg"/>
+      <img class="inline-block h-32 w-32 rounded-full ring-2 ring-white cursor-grab hover:animate-bounce"  src="https://styles.redditmedia.com/t5_2uakt/styles/communityIcon_fmttas2xiy351.png"/>
+      <img class="inline-block h-32 w-32 rounded-full ring-2 ring-white cursor-grab hover:animate-bounce"  src="https://www.freepnglogos.com/uploads/logo-mysql-png/logo-mysql-mysql-logo-png-images-are-download-crazypng-21.png"/>
+      <img class="inline-block h-32 w-32 rounded-full ring-2 ring-white cursor-grab hover:animate-bounce"  src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU"/>
     </div>
     
   </div>
@@ -223,7 +245,7 @@
     
     <!-- SERVICES SECTION -->
 
-    <section class="cards" id="services" style="padding-top: 0;">
+    <section id="services" class="hiddenn" style="padding-top: 0;" >
       
       <div class="text-center">
         <P class="text-red-600 text-xl font-medium pt-2">services</P>
@@ -275,7 +297,7 @@
 
     <!-- PROJECTS START -->
 
-    <section id="projects">
+    <section id="projects" class="hiddenn">
 
       <div class="text-center">
         <P class="text-red-600 text-xl font-medium pt-20">projects</P>
@@ -283,44 +305,82 @@
       </div>
 
       
-<div class="grid lg:grid-cols-6 sm:grid grid-cols-3">
-  <a href="#">
-      <img class="w-full h-full" src="https://ccnews.pl/wp-content/uploads/2021/11/docplanner.jpg" alt="" />
+<div class="hiddenn grid lg:grid-cols-6 sm:grid grid-cols-3" >
+<div class="mydivoutermulti">
+  <a href="https://www.docplanner.com/" target="_blank">
+      <img  class="relative w-full h-full hover:opacity-25 ease-in duration-300" src="https://ccnews.pl/wp-content/uploads/2021/11/docplanner.jpg" alt="" />
   </a>
-  <a href="#">
-      <img class=" w-full h-full" src="https://img.freepik.com/free-vector/black-friday-sale-background-with-shopping-cart_1017-27938.jpg?w=740&t=st=1677090905~exp=1677091505~hmac=6b948bd4625cf3a4f1ca322b37a4e50de959d4f9c7b569cdf2c22eee9ff5ed4e" alt="" />
+</div>
+
+<div class="mydivoutermulti">
+  <a href="https://azeddine11.github.io/shopping-card/">
+      <img class=" w-full h-full hover:opacity-25 ease-in duration-300" src="https://img.freepik.com/free-vector/black-friday-sale-background-with-shopping-cart_1017-27938.jpg?w=740&t=st=1677090905~exp=1677091505~hmac=6b948bd4625cf3a4f1ca322b37a4e50de959d4f9c7b569cdf2c22eee9ff5ed4e" alt="" />
   </a>
-  <a href="#">
-    <img class="w-full h-full" src="https://img.freepik.com/free-vector/logo-about-healthy-lifestyle_1195-56.jpg?w=740&t=st=1677091285~exp=1677091885~hmac=bbcab3d6b1fb2e5fd3c386813c676e77536d2138196d8b8c56ab71139ca24355" alt="" />
+</div>
+
+<div class="mydivoutermulti">
+  <a href="https://azeddine11.github.io/Health-Project/">
+    <img class="w-full h-full hover:opacity-25 ease-in duration-300" src="https://img.freepik.com/free-vector/logo-about-healthy-lifestyle_1195-56.jpg?w=740&t=st=1677091285~exp=1677091885~hmac=bbcab3d6b1fb2e5fd3c386813c676e77536d2138196d8b8c56ab71139ca24355" alt="" />
   </a>
-  <a href="#">
-    <img class=" w-full h-full" src="https://img.freepik.com/free-vector/gradient-quill-pen-design-template_23-2149837194.jpg?w=740&t=st=1677091487~exp=1677092087~hmac=a767f0b4488f8d3edf89e0977820f57664640845c5fd4cff3d47aa915d642f28" alt="" />
+</div>
+
+<div class="mydivoutermulti">
+  <a href="https://github.com/azeddine11/AbscenceTracking">
+    <img class=" w-full h-full hover:opacity-25 ease-in duration-300" src="https://img.freepik.com/free-vector/gradient-quill-pen-design-template_23-2149837194.jpg?w=740&t=st=1677091487~exp=1677092087~hmac=a767f0b4488f8d3edf89e0977820f57664640845c5fd4cff3d47aa915d642f28" alt="" />
   </a>
-  <a href="#">
-    <img class=" w-full h-full" src="https://img.freepik.com/free-vector/flat-design-letter-x-logo-template_23-2149356519.jpg?w=740&t=st=1677091729~exp=1677092329~hmac=eea2a5ecff9235b007bf906cc9a7225e33abc70b5626d9f401d75bb99de93a69" alt="" />
+</div>
+
+<div class="mydivoutermulti">
+  <a href="https://github.com/azeddine11/xo/settings/pages">
+    <img class=" w-full h-full hover:opacity-25 ease-in duration-300" src="images/xoo.jpg" alt="" />
   </a>
-  <a href="#">
-    <img class=" w-full h-full" src="https://img.freepik.com/free-vector/list-concept-illustration_114360-1320.jpg?w=740&t=st=1677093553~exp=1677094153~hmac=298216d2d53dff12e9fd5eebc79af77666d783e208e13f7b8f10f1ccfaf16995" alt="" />
+</div>
+ 
+<div class="mydivoutermulti">  
+  <a href="https://azeddine11.github.io/task_list/">
+    <img class=" w-full h-full hover:opacity-25 ease-in duration-300" src="images/task.jpg" alt="" />
   </a>
+</div>
+  
+
+
+  <div class="mydivoutermulti">  
   <a href="#">
-    <img class=" w-full h-full" src="https://img.freepik.com/free-vector/abstract-logo-template_1156-887.jpg?w=740&t=st=1677094149~exp=1677094749~hmac=a002da8d78f364f52348771ce0659acc1f65efbb69a5e3d65e80923bcd45b30d" alt="" />
+    <img class=" w-full h-full hover:opacity-25 ease-in duration-300" src="https://img.freepik.com/free-vector/abstract-logo-template_1156-887.jpg?w=740&t=st=1677094149~exp=1677094749~hmac=a002da8d78f364f52348771ce0659acc1f65efbb69a5e3d65e80923bcd45b30d" alt="" />
   </a>
-  <a href="#">
-    <img class=" w-full h-full" src="https://img.freepik.com/free-vector/marketing-logo-template-with-arrow_23-2149105274.jpg?w=740&t=st=1677093770~exp=1677094370~hmac=6316f3c2c03e8a89f58d2455cce0e2786fcf33a9a59c6dd9dc908d88ee56ed57" alt="" />
+</div>
+
+  <div class="mydivoutermulti">
+  <a href="https://azeddine11.github.io/best_portfolio/">
+    <img class=" w-full h-full hover:opacity-25 ease-in duration-300" src="images/Azeddine.png" alt="" />
   </a>
+</div>
+
+  <div class="mydivoutermulti">
   <a href="#">
-    <img class=" w-full h-full" src="https://img.freepik.com/free-vector/flat-computer-logo-template_23-2149003719.jpg?w=740&t=st=1677093898~exp=1677094498~hmac=39f76f5796483863b52b14f9388e2050ce1399c1fbbbdfcf40cd185b4c2a8a19" alt="" />
+    <img class=" w-full h-full hover:opacity-25 ease-in duration-300" src="https://img.freepik.com/free-vector/flat-computer-logo-template_23-2149003719.jpg?w=740&t=st=1677093898~exp=1677094498~hmac=39f76f5796483863b52b14f9388e2050ce1399c1fbbbdfcf40cd185b4c2a8a19" alt="" />
   </a>
+</div>
+
+  <div class="mydivoutermulti">
   <a href="#">
-    <img class=" w-full h-full" src="https://marketplace.canva.com/EAEz7zOew58/2/0/1600w/canva-moon-light-logo-template-8pEo1H1XNj4.jpg" alt="" />
+    <img class=" w-full h-full hover:opacity-25 ease-in duration-300" src="https://marketplace.canva.com/EAEz7zOew58/2/0/1600w/canva-moon-light-logo-template-8pEo1H1XNj4.jpg" alt="" />
   </a>
+</div>
+
+  <div class="mydivoutermulti">
   <a href="#">
-    <img class=" w-full h-full" src="https://img.freepik.com/free-vector/creative-flat-laptop-logo-template_23-2149010230.jpg?w=740&t=st=1677094009~exp=1677094609~hmac=59b0663a226593a82a00d76c39b0f31adf777b37f79c5c0728852542d9f725af" alt="" />
+    <img class=" w-full h-full hover:opacity-25 ease-in duration-300" src="https://img.freepik.com/free-vector/creative-flat-laptop-logo-template_23-2149010230.jpg?w=740&t=st=1677094009~exp=1677094609~hmac=59b0663a226593a82a00d76c39b0f31adf777b37f79c5c0728852542d9f725af" alt="" />
   </a>
+</div>
+
+
+  <div class="mydivoutermulti">
   <a href="#">
-    <img class=" w-full h-full" src="  https://img.freepik.com/free-vector/hand-drawn-data-logo-template_23-2149203375.jpg?w=740&t=st=1677093958~exp=1677094558~hmac=e29d610b3b20b4330cac60f13088923e1f32002d7bd3c61a3a8cd86525330bca
+    <img class=" w-full h-full hover:opacity-25 ease-in duration-300" src="  https://img.freepik.com/free-vector/hand-drawn-data-logo-template_23-2149203375.jpg?w=740&t=st=1677093958~exp=1677094558~hmac=e29d610b3b20b4330cac60f13088923e1f32002d7bd3c61a3a8cd86525330bca
     " alt="" />
   </a>
+</div>
 
 
 </div>
@@ -333,7 +393,7 @@
 
     <!-- CONTACT START -->
 
-    <section class="cards contact py-20" id="contact">
+    <!-- <section class="hiddenn cards contact py-20" id="contact" >
       <div class="text-center">
         <P class="text-red-600 text-xl font-medium ">contact</P>
         <h1 class="text-white text-3xl font-bold pt-5 pb-16">LET'S BE IN TOUCH</h1>
@@ -358,7 +418,7 @@
               </div>
           </div>
       </div>
-  </section>
+  </section> -->
 
     <!-- CONTACT END -->
 
@@ -366,22 +426,23 @@
 
     <!-- SOCIAL ICONS START -->
 
+<section>
     
  <!-- Social Sharing Bar -->
- <div class="fixed left-0 top-1/4 z-50 px-5 py-3 bg-transparent flex flex-col space-y-3">
+
+ <div class="fixed left-0 top-1/3 z-50 px-5 py-3 bg-transparent flex flex-col space-y-3">
   <!-- Facebook -->
-  <a href="#" title="Share on Facebook">
-      <svg class="fill-white hover:fill-blue-700 text-white " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50"
-          viewBox="0 0 50 50">
-          <path
-              d="M25,2C12.318,2,2,12.317,2,25s10.318,23,23,23c12.683,0,23-10.317,23-23S37.683,2,25,2z M32,16h-3.29 C26.772,16,26,16.455,26,17.806V21h6l-1,5h-5v13h-6V26h-3v-5h3v-2.774C20,14.001,21.686,11,26.581,11C29.203,11,32,12,32,12V16z">
-          </path>
-      </svg>
+  <a href="https://github.com/azeddine11?tab=repositories" title="Share on Facebook" target="_blank">
+    <svg aria-hidden="true" class="octicon octicon-mark-github fill-white hover:fill-black" height="50" version="1.1" viewBox="0 0 16 16" width="50">
+      <path 
+      fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+    </path>
+    </svg>
   </a>
 
   <!-- WhatsApp -->
   <a href="https://wa.me/212677730968" title="Share on WhatsApp" target="_blank">
-      <svg class="fill-white hover:fill-green-600  " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50">
+      <svg class="fill-white hover:fill-green-600 " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50">
           <path
               d="M25,2C12.318,2,2,12.318,2,25c0,3.96,1.023,7.854,2.963,11.29L2.037,46.73c-0.096,0.343-0.003,0.711,0.245,0.966 C2.473,47.893,2.733,48,3,48c0.08,0,0.161-0.01,0.24-0.029l10.896-2.699C17.463,47.058,21.21,48,25,48c12.682,0,23-10.318,23-23 S37.682,2,25,2z M36.57,33.116c-0.492,1.362-2.852,2.605-3.986,2.772c-1.018,0.149-2.306,0.213-3.72-0.231 c-0.857-0.27-1.957-0.628-3.366-1.229c-5.923-2.526-9.791-8.415-10.087-8.804C15.116,25.235,13,22.463,13,19.594 s1.525-4.28,2.067-4.864c0.542-0.584,1.181-0.73,1.575-0.73s0.787,0.005,1.132,0.021c0.363,0.018,0.85-0.137,1.329,1.001 c0.492,1.168,1.673,4.037,1.819,4.33c0.148,0.292,0.246,0.633,0.05,1.022c-0.196,0.389-0.294,0.632-0.59,0.973 s-0.62,0.76-0.886,1.022c-0.296,0.291-0.603,0.606-0.259,1.19c0.344,0.584,1.529,2.493,3.285,4.039 c2.255,1.986,4.158,2.602,4.748,2.894c0.59,0.292,0.935,0.243,1.279-0.146c0.344-0.39,1.476-1.703,1.869-2.286 s0.787-0.487,1.329-0.292c0.542,0.194,3.445,1.604,4.035,1.896c0.59,0.292,0.984,0.438,1.132,0.681 C37.062,30.587,37.062,31.755,36.57,33.116z">
           </path>
@@ -389,17 +450,17 @@
   </a>
 
   <!-- Twitter -->
-  <a href="#" title="Share on Twitter">
+  <!-- <a href="https://twitter.com/home?lang=en" title="Share on Twitter" target="_blank">
       <svg class="fill-white hover:fill-blue-400  " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50"
           viewBox="0 0 50 50">
           <path
               d="M25,2C12.317,2,2,12.317,2,25s10.317,23,23,23s23-10.317,23-23S37.683,2,25,2z M36.237,20.524 c0.01,0.236,0.016,0.476,0.016,0.717C36.253,28.559,30.68,37,20.491,37c-3.128,0-6.041-0.917-8.491-2.489 c0.433,0.052,0.872,0.077,1.321,0.077c2.596,0,4.985-0.884,6.879-2.37c-2.424-0.044-4.468-1.649-5.175-3.847 c0.339,0.065,0.686,0.1,1.044,0.1c0.505,0,0.995-0.067,1.458-0.195c-2.532-0.511-4.441-2.747-4.441-5.432c0-0.024,0-0.047,0-0.07 c0.747,0.415,1.6,0.665,2.509,0.694c-1.488-0.995-2.464-2.689-2.464-4.611c0-1.015,0.272-1.966,0.749-2.786 c2.733,3.351,6.815,5.556,11.418,5.788c-0.095-0.406-0.145-0.828-0.145-1.262c0-3.059,2.48-5.539,5.54-5.539 c1.593,0,3.032,0.672,4.042,1.749c1.261-0.248,2.448-0.709,3.518-1.343c-0.413,1.292-1.292,2.378-2.437,3.064 c1.122-0.136,2.188-0.432,3.183-0.873C38.257,18.766,37.318,19.743,36.237,20.524z">
           </path>
       </svg>
-  </a>
+  </a> -->
 
   <!-- LinkedIn -->
-  <a href="#" title="Share on LinkedIn">
+  <a href="https://www.linkedin.com" title="Share on LinkedIn" target="_blank">
       <svg class="fill-white hover:fill-blue-600  " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50"
           viewBox="0 0 50 50">
           <path
@@ -408,72 +469,177 @@
       </svg>
   </a>
 </div>
-
+</section>
 
     <!-- SOCIAL ICONS END  -->
+
+
+
+    <!-- FORM CONTACT START -->
+
+
+    <!-- Container for demo purpose -->
+<div class="container my-24 px-6 mx-auto">
+
+  <!-- Section: Design Block -->
+  <section class="mb-32 text-center" id="contact">
+
+    <div class="text-center">
+      <P class="text-red-600 text-xl font-medium ">contact</P>
+      <h1 class="text-white text-3xl font-bold pt-5">LET'S BE IN TOUCH</h1>
+    </div>
+    <style>
+      .map-container {
+        height: 700px;
+        z-index: -1;
+      }
+    </style>
+    <div class="px-6 py-12 md:px-12 hiddenn">
+      <div class="container mx-auto ">
+        <div class="grid lg:grid-cols-2 flex items-center">
+          <div class="md:mt-12 lg:mt-0 mb-12 lg:mb-0">
+            <div
+              class="block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14"
+              style="background: rgb(61, 61, 61); backdrop-filter: blur(30px)"
+            >
+            <h2 class="text-3xl font-bold mb-12 text-white">Contact us</h2>
+            <form>
+              <div class="form-group mb-6">
+                <input
+                  type="text"
+                  class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
+                  id="exampleInput7"
+                  placeholder="Name"
+                />
+              </div>
+              <div class="form-group mb-6">
+                <input
+                  type="email"
+                  class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
+                  id="exampleInput8"
+                  placeholder="Email address"
+                />
+              </div>
+              <div class="form-group mb-6">
+                <textarea
+                  class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
+                  id="exampleFormControlTextarea13"
+                  rows="3"
+                  placeholder="Message"
+                ></textarea>
+              </div>
+              <div class="form-group form-check text-center mb-6">
+                <input
+                  type="checkbox"
+                  class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-red-600 checked:border-red-600 hover:fill-red-600 focus:outline-none transition duration-300 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
+                  id="exampleCheck87"
+                  checked
+                />
+                <label class="form-check-label inline-block text-white" for="exampleCheck87"
+                  >Send me a copy of this message</label
+                >
+              </div>
+              <button
+                type="submit"
+                class="w-full px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:text-black hover:bg-white hover:shadow-lg focus:bg-white focus:shadow-lg  focus:outline-none focus:ring-0 active:bg-white active:shadow-lg transition duration-300 ease-in-out"
+              >
+                Send
+              </button>
+            </form>
+            </div>
+          </div>
+          <div class="md:mb-12 lg:mb-0">
+            <div class="map-container relative shadow-lg rounded-lg">
+              <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" class="left-0 top-0 h-full w-full absolute rounded-lg" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+
+</div>
+<!-- Container for demo purpose -->
+   
+    <!-- FORM CONTACT END -->
+
+
+
 
     <!-- FOOTER START -->
 
     <footer aria-label="Site Footer" style="background-color: #181818;">
       <div
-        class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24"
+        class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8"
       >
     
             <!-- <span class="sr-only">Back to top</span> -->
-            <button class="bg-red-600" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <button class="bg-red-600" onclick="topFunction()" id="myBtn" title="Go to top"> UP </button>
 
-    
-      
-    
+   
         <div class="lg:flex lg:items-end lg:justify-between">
           <div>
             <p
-              class="mx-auto mt-6 max-w-md text-center leading-relaxed text-white lg:text-left"
+              class="mx-auto mt-6 max-w-md text-center leading-loose text-white lg:text-left "
             >
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-              consequuntur amet culpa cum itaque neque.
+              I hope you found here what you were looking for, don't hesitate to contact me 
+              if you need any of what i can offer.. Regards
             </p>
+               
           </div>
+         
     
           <nav aria-label="Footer Nav" class="mt-12 lg:mt-0">
+
+       
             <ul
               class="flex flex-wrap justify-center gap-6 md:gap-8 lg:justify-end lg:gap-12"
             >
             <li>
-              <a class="text-white" href="/">
+              <a class="text-white" href="#home">
                 Home
               </a>
             </li>
               <li>
-                <a class="text-white" href="/">
+                <a class="text-white" href="#about">
                   About
                 </a>
               </li>
     
               <li>
-                <a class="text-white" href="/">
+                <a class="text-white" href="#skills">
                   Skills
                 </a>
               </li>
     
               <li>
-                <a class="text-white" href="/">
+                <a class="text-white" href="#services">
                   Services
                 </a>
               </li>
     
               <li>
-                <a class="text-white" href="/">
+                <a class="text-white" href="#projects">
                   Projects
                 </a>
               </li>
             </ul>
+
+            <div class=" mx-auto mt-8 text-center text-white">
+               <i class="fa-solid fa-envelope text-red-600 text-3xl pr-2 "></i><span class="text-white ">azeddineaittaakat1r@gmail.com</span> 
+               <i class="fa-solid fa-phone text-red-600 text-2xl pl-4"><span class="text-white ">+212 677 73 09 68</span > </i>
+   
+           </div>
           </nav>
         </div>
     
-        <p class="mt-12 text-center text-sm text-white lg:text-right">
-          Copyright AZEDDINE WF&copy; 2023
+        <div>
+          <p class="mt-12 text-center text-sm font-bold text-white ">
+          Copyright AZEDDINE WF &copy; 2023
         </p>
+        </div>
+       
       </div>
     </footer>
     <!-- FOOTER END -->
