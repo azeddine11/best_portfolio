@@ -188,7 +188,7 @@
           <div class="relative flex items-center">
           
     
-            <div class="p-8 sm:p-2">
+            <div class="p-8 sm:p-4">
               <h2 class="text-2xl font-medium sm:text-3xl text-white">
                 Hi Am AZEDDINE, Based in Morocco
               </h2>
@@ -521,9 +521,13 @@
               style="background: rgb(61, 61, 61); backdrop-filter: blur(30px)"
             >
             <h2 class="text-3xl font-bold mb-12 text-white">Contact me</h2>
-            <form>
+            <form id="sendMessage"
+            action="https://formspree.io/f/xoqzpjag"
+            method="POST"
+            >
               <div class="form-group mb-6">
                 <input
+                name="name"
                   type="text"
                   class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
                   id="exampleInput7"
@@ -532,6 +536,7 @@
               </div>
               <div class="form-group mb-6">
                 <input
+                name="email"
                   type="email"
                   class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
                   id="exampleInput8"
@@ -540,6 +545,7 @@
               </div>
               <div class="form-group mb-6">
                 <textarea
+                name="message"
                   class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none"
                   id="exampleFormControlTextarea13"
                   rows="3"
@@ -548,6 +554,7 @@
               </div>
               <div class="form-group form-check text-center mb-6">
                 <input
+                  name="check"
                   type="checkbox"
                   class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-red-600 checked:border-red-600 hover:fill-red-600 focus:outline-none transition duration-300 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
                   id="exampleCheck87"
@@ -577,6 +584,7 @@
       </div>
     </div>
   </section>
+
   <!-- Section: Design Block -->
 
 </div>
